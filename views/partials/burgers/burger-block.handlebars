@@ -1,9 +1,13 @@
 <li>
     {{burger_name}}
 
-    <button id="eat" class="btn btn-primary" data-id="{{id}}" data-neweat="{{eat}}">
-        {{#if eat}}
-            Eat a BURGER
+    <button class="btn btn-primary btn-sm change-eat" data-id="{{id}}" data-neweat="{{devoured}}">
+        {{#if devoured}}
+            EAT!
+        {{else}}
+            NOT NOW!
         {{/if}}
     </button>
+
+    <button class="btn btn-primary btn-sm remove-eat" data-id="{{this.id}}"> x </button>
 </li>

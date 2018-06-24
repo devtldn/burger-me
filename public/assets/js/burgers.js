@@ -1,5 +1,5 @@
 $(function () {
-    $("#eat").on("click", function (event) {
+    $(".change-eat").on("click", function (event) {
         var id = $(this).data("id");
         var newEat = $(this).data("neweat");
 
@@ -7,12 +7,14 @@ $(function () {
             devoured: newEat
         };
 
+        console.log(newEatState);
+
         $.ajax("/api/burgers/" + id, {
             type: "PUT",
             data: newEatState
         }).then(
             function () {
-                console.log(`\n\nYou're now eating ${newEat}!`);
+                console.log(`\n\nDevoured set to ${newEat}!`);
 
                 location.reload();
             }
@@ -27,14 +29,26 @@ $(function () {
             devoured: $("[name=devoured]:checked").val().trim()
         };
 
-        console.log(newBurger);
-
         $.ajax("/api/burgers", {
             type: "POST",
             data: newBurger
         }).then(
             function () {
-                console.log(`\n\nYour new ${newBurger} is ready to eat!`);
+                console.log(`\n\nYour ${newBurger} is ready!`);
+
+                location.reload();
+            }
+        );
+    });
+
+    $(".remove-eat").on("click", function (event) {
+        var id = $(this).data("id");
+
+        $.ajax("/api/burgers/" + id, {
+            type: "DELETE"
+        }).then(
+            function () {
+                console.log(`\n\nYou didn't want ${id}!`);
 
                 location.reload();
             }
