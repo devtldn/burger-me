@@ -1,0 +1,6 @@
+.list-group {
+    list-style-type: none !important;
+    text-align: right !important;
+    padding-right: 15% !important;
+    padding-left: 5% !important;
+}
