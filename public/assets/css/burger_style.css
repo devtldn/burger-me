@@ -17,3 +17,8 @@
     padding-right: 15% !important;
     padding-left: 5% !important;
 }
+
+.btn-primary {
+    background-color: #875CFF !important;
+    border-color: #875CFF !important;
+}
