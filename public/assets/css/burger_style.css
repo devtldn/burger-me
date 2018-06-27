@@ -22,3 +22,7 @@
     background-color: #875CFF !important;
     border-color: #875CFF !important;
 }
+
+.card .form-control {
+    border-color: #875CFF !important;
+}
